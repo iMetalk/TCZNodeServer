@@ -1,0 +1,14 @@
+{
+  "name": "nodestudy",
+  "version": "1.0.0",
+  "description": "A project product test data",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "lefe",
+  "license": "ISC"
+}
