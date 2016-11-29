@@ -7,8 +7,12 @@ app.use(bodyparser({extended: false}))
 
 var routeCB = function routeCallBack(req, res, next){
 
-    console.log(req.method + '/' + req.host + req.originalUrl);
+    console.log(req.method + '/' + req.hostname + req.originalUrl);
     console.log(req.body);
+    
+    // Get header
+    // console.log(JSON.stringify(req.headers));
+    //.log(req.get('deviceid'));
 
     next()
 }
