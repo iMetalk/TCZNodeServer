@@ -3,16 +3,19 @@ var bodyparser = require('body-parser');
 var router = require('./router.js');
 
 var app = express();
-app.use(bodyparser({extended: false}))
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({
+	extended: true
+}));
 
 var routeCB = function routeCallBack(req, res, next){
 
     console.log(req.method + '/' + req.hostname + req.originalUrl);
-    console.log(req.body);
-    
+    console.log(JSON.stringify(req.body));
+
     // Get header
     // console.log(JSON.stringify(req.headers));
-    //.log(req.get('deviceid'));
+    // console.log(req.get('deviceid'));
 
     next()
 }
