@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyparser = require('body-parser');
 var router = require('./router.js');
-var mysql = require('./mysql.js');
+var mysql = require('./data/mysql.js');
 
 var app = express();
 app.use(bodyparser.json());

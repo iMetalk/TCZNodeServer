@@ -18,6 +18,7 @@ NPM安装
 1.http://www.cnblogs.com/macro-cheng/archive/2011/10/25/mysql-001.html
 有了这篇文章才搞定了，不容易啊
 http://www.jianshu.com/p/fd3aae701db9
+下载一个客户端：官方的 MYSQLWorkBench
 
 
 */
