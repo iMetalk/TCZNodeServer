@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyparser = require('body-parser');
 var router = require('./router.js');
+var mysql = require('./mysql.js');
 
 var app = express();
 app.use(bodyparser.json());
@@ -28,6 +29,9 @@ var dealCB = function  dealCallBack(req, res){
 app.post('/api/*', [routeCB, dealCB]);
 
 app.listen(3000);
+
+// Mysql
+mysql.configureMysql();
 
 console.log('Server running at 3000');
 
