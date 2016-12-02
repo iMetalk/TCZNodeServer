@@ -1,20 +1,17 @@
+var sql = require('../../data/sql.js');
+var mysql = require('../../data/mysql.js');
 
 exports.getFriendList = function(req, res) {
 	var token = req.get('token');
 
 	if (token && typeof(token) == 'string') {
-		var friendListJson = {
+		mysql.excuteMysql(sql.friendSql.select, function(err, results){
+    	  res.json({
 			code: 200,
-			msg: 'Success',
-			data: [
-			{name: 'wsy', sex: '1', nickName: 'Hello', address: 'BeiJing'},
-			{name: 'lefe', sex: '1', nickName: 'Hello', address: 'BeiJing'},
-			{name: 'wz', sex: '1', nickName: 'XiaoZuoZi', address: 'ShangHai'},
-			{name: 'xhx', sex: '1', nickName: 'DaHua', address: 'BeiJing'},
-			{name: 'txy', sex: '1', nickName: 'XY', address: 'BeiJing'}
-			]
-		}
-		res.json(friendListJson)
+			data: JSON.stringify(results),
+			msg: 'success'
+		  });
+       });
 	}
 	else{
 		res.json({

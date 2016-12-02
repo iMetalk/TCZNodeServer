@@ -3,6 +3,7 @@ exports.configure = {
 	  host: 'localhost',
       user: 'root',
       password: 'qwe123',
-      database: 'metalk'
+      database: 'metalk',
+      connectionLimit: 10,
 	},
 };

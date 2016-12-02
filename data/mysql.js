@@ -2,43 +2,41 @@
 var mysql = require('mysql');
 var configure = require('../configure.js');
 
-exports.configureMysql = function () {
-    var mysqlConfigure = configure.configure.mysql;
+exports.excuteMysql = function (sql, values, callback) {
 
-    var connection = mysql.createConnection({
-      host     : mysqlConfigure.host,
-      user     : mysqlConfigure.user,
-      password : mysqlConfigure.password,
-      database: mysqlConfigure.database
-      // password : ';gb<V3a-NsD9'
-    });
+  if (!sql || sql === undefined) {
+    console.log('Excute sql error: ' + sql);
+    callback();
+    return;
+  }
+  console.log(sql);
 
-    connection.connect(function(err) {
-      if (err) {
-      console.error('error connecting: ' + err.stack);
+  var pool = mysql.createPool(configure.mysql);
+
+  pool.getConnection( function (err, connection) {
+    if (err) {
+      console.log('Get pool connection err:' + err);
       return;
-      }
-      console.log('connected as id ' + connection.threadId);
-   });
+    }
+    console.log('connected as id ' + connection.threadId);
 
-    // Close connnetion
-    // connection.end();
-    
-    // Query friend
-    var queryFriend = function (err, results, fields){
-      console.log('query friend results:' + results[0].userId + ' ' + results[0].nickName);
+    var resultCB = function (err, result, fields) {
       if (err) {
-          console.log('query friend error:' + err);
+        console.log('Excute sql error: ' + error);
       }
-    };
-    connection.query('SELECT *FROM friend', queryFriend);
+      console.log('select ' + result[0].userId);
 
-    // Add friend
-    var insrtFriend = function(err){
-      if (err) {
-          console.log('query friend error:' + err);
-      }
+      callback(err, result, fields);
     };
-    connection.query('INSERT INTO friend(userId, nickName) VALUES (?, ?)', ['34786', 'wsy'], insrtFriend);
+    if (values && values.length > 0) {
+       connection.query(sql, values, resultCB);
+    }
+    else{
+      connection.query(sql, resultCB);
+    }
+
+    connection.release();
+
+  });
 
 }

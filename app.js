@@ -31,7 +31,7 @@ app.post('/api/*', [routeCB, dealCB]);
 app.listen(3000);
 
 // Mysql
-mysql.configureMysql();
+// mysql.excuteMysql('SELECT *FROM friend', [], function(){});
 
 console.log('Server running at 3000');
 
