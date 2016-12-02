@@ -14,17 +14,14 @@ exports.excuteMysql = function (sql, values, callback) {
   var pool = mysql.createPool(configure.mysql);
 
   pool.getConnection( function (err, connection) {
-    if (err) {
-      console.log('Get pool connection err:' + err);
-      return;
-    }
+    if (err) throw err;
+
     console.log('connected as id ' + connection.threadId);
 
     var resultCB = function (err, result, fields) {
       if (err) {
         console.log('Excute sql error: ' + error);
       }
-      console.log('select ' + result[0].userId);
 
       callback(err, result, fields);
     };

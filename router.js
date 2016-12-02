@@ -1,7 +1,9 @@
 
-var getFriend = require('./api/friend/get.js')
+exports.routed = function (req, res) {
 
-exports.routed = function (req, res){
-	
-    getFriend.getFriendList(req, res);
+    console.log('path: ' + req.path);
+	console.log('original path: ' + req.originalUrl);
+
+	var friend = require('.' + req.path);
+    friend.friend(req, res);
 };

@@ -1,7 +1,8 @@
 module.exports = {
-   friendSql: {
-	insert: 'INSERT INTO friend(userId, nickName) VALUES (?, ?)',
-	select: 'SELECT *FROM friend'
+   friend: {
+	insert: 'INSERT INTO friend (userId, nickName) VALUES (?, ?)',
+	select: 'SELECT *FROM friend',
+	delete: 'DELETE FROM friend WHERE userId=?'
    },
 }
 

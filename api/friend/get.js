@@ -1,11 +1,12 @@
 var sql = require('../../data/sql.js');
 var mysql = require('../../data/mysql.js');
+var configure = require('../../configure');
 
-exports.getFriendList = function(req, res) {
+exports.friend = function(req, res) {
 	var token = req.get('token');
 
 	if (token && typeof(token) == 'string') {
-		mysql.excuteMysql(sql.friendSql.select, function(err, results){
+		mysql.excuteMysql(sql.friend.select, function(err, results){
     	  res.json({
 			code: 200,
 			data: JSON.stringify(results),
@@ -14,9 +15,6 @@ exports.getFriendList = function(req, res) {
        });
 	}
 	else{
-		res.json({
-			code: 9100,
-			msg: 'Parameter is error'
-		});
+		res.json(configure.code9000);
 	}
 }

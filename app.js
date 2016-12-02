@@ -12,7 +12,7 @@ app.use(bodyparser.urlencoded({
 var routeCB = function routeCallBack(req, res, next){
 
     console.log(req.method + '/' + req.hostname + req.originalUrl);
-    console.log(JSON.stringify(req.body));
+    console.log('body:' + JSON.stringify(req.body));
 
     // Get header
     // console.log(JSON.stringify(req.headers));
@@ -31,7 +31,7 @@ app.post('/api/*', [routeCB, dealCB]);
 app.listen(3000);
 
 // Mysql
-// mysql.excuteMysql('SELECT *FROM friend', [], function(){});
+// mysql.excuteMysql('DELETE FROM friend WHERE nickName = ?', ["2222"], function(){});
 
 console.log('Server running at 3000');
 
