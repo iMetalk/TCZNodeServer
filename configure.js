@@ -16,4 +16,9 @@ module.exports = {
 		code: 9100,
 		msg: 'Database error'
 	},
+
+	code9200: {
+		code: 9200,
+		msg: 'Url error, please check you url'
+	},
 };
