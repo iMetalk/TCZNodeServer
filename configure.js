@@ -4,7 +4,8 @@ module.exports = {
 	  port: '3306',
       user: 'root',
       password: 'qwe123',
-      database: 'metalk'
+      database: 'metalk',
+      connectionLimit: 100
 	},
 
 	code9000: {
