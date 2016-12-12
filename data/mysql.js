@@ -1,6 +1,7 @@
 
 var mysql = require('mysql');
 var configure = require('../configure.js');
+
 var pool = mysql.createPool(configure.mysql);
 
 exports.excuteMysql = function (sql, values, callback) {
