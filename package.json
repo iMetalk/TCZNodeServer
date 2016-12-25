@@ -7,11 +7,6 @@
   "scripts": {
     "test": "test"
   },
-  "dependencies" : {
-    "express" : "4.x",
-    "body-parser" : "1.x",
-    "mysql" : "1.x",
-  },
   "keywords": [
     "test"
   ],

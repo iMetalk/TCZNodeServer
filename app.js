@@ -26,7 +26,7 @@ var dealCB = function  dealCallBack(req, res){
     router.routed(req, res)
 }
 
-app.post('/api/*', [routeCB, dealCB]);
+app.all('/api/*', [routeCB, dealCB]);
 
 app.listen(3000);
 
