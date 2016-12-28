@@ -4,8 +4,8 @@ var configure = require('./configure');
 exports.routed = function (req, res) {
 
 	try{
-        var friend = require('.' + req.path);
-		friend.friend(req, res);
+        var api = require('.' + req.path);
+		api.friend(req, res);
 	}
 	catch(e){
         console.log('path: ' + req.path);

@@ -90,4 +90,10 @@ connection.query('SELECT 1; SELECT 2', function(err, results) {
   console.log(results[1]); // [{2: 2}]
 });
 
+============= 文件上传 ===================
+最近由于项目需求，而服务端最近比较忙，自己需要写一个文件上传的框架，没办法让服务端的
+兄弟配合一下，只能自己研究一下Node的文件上传，我想应该很简单。经过查资料发现一个库 Multer，
+知道这个库后，我一般第一时间就会到 github上看它的 star ，然后看 README
+
+
 */
