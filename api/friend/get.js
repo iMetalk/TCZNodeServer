@@ -2,7 +2,7 @@ var sql = require('../../data/sql');
 var mysql = require('../../data/mysql');
 var configure = require('../../configure');
 
-exports.friend = function(req, res) {
+module.exports = function(req, res) {
 	var token = req.get('token');
 
 	if (token && typeof(token) == 'string') {

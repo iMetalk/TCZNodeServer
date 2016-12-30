@@ -5,7 +5,7 @@ exports.routed = function (req, res) {
 
 	try{
         var api = require('.' + req.path);
-		api.friend(req, res);
+		api(req, res);
 	}
 	catch(e){
         console.log('path: ' + req.path);

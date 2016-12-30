@@ -2,7 +2,7 @@ var sql = require('../../data/sql');
 var mysql = require('../../data/mysql');
 var configure = require('../../configure');
 
-exports.friend = function (req, res) {
+module.exports = function (req, res) {
 	// 判断参数是否合法
 	var userId = req.body.userId;
 	var nickName = req.body.nickName;

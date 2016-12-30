@@ -33,7 +33,7 @@ app.listen(3000);
 // Mysql
 // mysql.excuteMysql('DELETE FROM friend WHERE nickName = ?', ["2222"], function(){});
 
-console.log('Server running at 3000');
+console.log('API server running at 3000');
 
 
 
