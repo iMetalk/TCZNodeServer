@@ -36,19 +36,6 @@ module.exports = function (req, res) {
                     }
                  ],
               },
-              {
-                 price : "800",
-                 market_price : "400",
-                 join_count : "4",
-                 icon : "http://a-ssl.duitang.com/uploads/item/201611/13/20161113141901_xtJRd.jpeg",
-                 norms : [
-                    {
-                       id : "124",
-                       name : "尺寸123",
-                       size : "122",
-                    }
-                 ],
-              },
         	],
 
         },
@@ -68,16 +55,6 @@ module.exports = function (req, res) {
                        id : "122",
                        name : "尺寸123",
                        size : "122",
-                    },
-                    {
-                       id : "123",
-                       name : "蓝色",
-                       size : "230",
-                    },
-                    {
-                       id : "124",
-                       name : "男士专用",
-                       size : "180",
                     },
                  ],
               },

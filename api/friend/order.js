@@ -15,12 +15,12 @@ module.exports = function (req, res) {
         	district : "北京",
         	address : "天元港中心B座2001",
         },
-     	balance_rmb : "200",
+     	  balance_rmb : "200",
         balance_snf_coin : "20",
         balance_voucher : "40",
         commodityInfo : [
           {
-              commodityId : "333333",
+            commodityId : "12345",
         	  freight : "0",
         	  voucherLimit : "20",
         	  activityInfo : [
@@ -36,9 +36,30 @@ module.exports = function (req, res) {
                       },
                     ]
                 },
-        	  ]  
-            }
+        	 ],  
+          },
+
+          {
+            commodityId : "12346",
+            freight : "0",
+            voucherLimit : "20",
+            activityInfo : [
+                {
+                  activityType : "春节活动",
+                  activityName : "买一赠一",
+                  activityRule : "春节活动规则" ,
+                    presentNumber : "2",
+                    giftList : [
+                      { 
+                       giftId : "22222",  //赠品ID
+                       giftName : "送你的礼物",  //赠品名称
+                      },
+                    ]
+                },
+           ],  
+          }
         ],
+        
       }
 	}
 
