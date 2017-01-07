@@ -1,4 +1,3 @@
-
 {
   "name": "nodestudy",
   "version": "1.0.0",
@@ -11,5 +10,8 @@
     "test"
   ],
   "author": "lefe",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4"
+  }
 }
