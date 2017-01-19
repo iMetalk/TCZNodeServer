@@ -42,7 +42,7 @@ async.concatSeries(concatDatas, concatFun,  function(err, result) {
 
 
 /*
-* Detect
+* Detect 返回第一个合法的数据
 * Returns the first value in coll that passes an async truth test.
 */
 var detectFun = function(aNum, callback) {
@@ -125,6 +125,91 @@ var filterFun = function(aNum, callback) {
 async.filter(tasks, filterFun, function(err, result){
 	console.log("Filter result: " + result);
 	console.log("Filter err: " + err);
+});
+
+/*
+* Map
+* Produces a new collection of values by mapping each value in coll through the iteratee function. 
+* 遍历集合中的数据并产生一个新的集合，如果发生错误，将终止遍历
+*/
+var mapFun = function(aNum, callback){
+	if (aNum > 8) {
+		callback("Map error");
+	}else{
+		callback(null, aNum*2);
+	}
+}
+
+async.map(concatDatas, mapFun, function(err, result){
+	console.log("Map result: " + result);
+	console.log("Map err: " + err);
+});
+
+
+/*
+* Reduce
+* Memo is last state
+* aNum is the collection item
+* 给定一个初始值，加上集合中每个元素
+*/
+var reduceData = [1, 2, 3];
+
+var reduceFun = function(memo, aNum, callback){
+	console.log("memo: " + memo + " aNum: " + aNum);
+	callback(null, aNum + memo);
+}
+// 100 is init value
+async.reduceRight(reduceData, 100, reduceFun, function(err, result){
+	console.log("Reduce result: " + result);
+	console.log("Reduce err: " + err);
+});
+
+/*
+* Reject
+* The opposite of filter. Removes values that pass an async truth test.
+* 过滤掉不合法的数据
+*/
+var rejectData = [3, 9, 1];
+var rejectFun = function(aNum, callback){
+	callback(null, aNum == 9);
+}
+
+async.reject(rejectData, rejectFun, function(err, result){
+	console.log("Reject result: " + result);
+	console.log("Reject err: " + err);
+});
+
+
+/*
+* Some
+* Returns true if at least one element in the coll satisfies an async test. If any 
+* iteratee call returns true, the main callback is immediately called.
+* 查找是否有满足条件的数据，如果有则返回 true，否则返回 false
+*/
+var someData = [31, 8, 2];
+var someFun = function(aNum, callback){
+	callback(null, aNum == 5);
+}
+
+async.some(someData, someFun, function(err, result){
+	console.log("Some result: " + result);
+	console.log("Some err: " + err);
+});
+
+
+/*
+* SortBy
+* 逆序排列
+*/
+var sortData = [31, 1, 2, 10];
+var sortLetter = ['a', 'c', 'b'];
+var sortFun = function(aNum, callback){
+	callback(null, aNum * -1);
+}
+
+async.sortBy(sortData, sortFun, function(err, result){
+	console.log("SortBy result: " + result);
+	console.log("SortBy err: " + err);
 });
 
 
