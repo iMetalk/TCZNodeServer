@@ -14,6 +14,16 @@ for(var index in testDict){
 	}
 }
 
+for (var i = 0; i < testDict.length; i++){
+    var dict = testDict[i];
+    console.log("for i dict: " + dict.name);
+
+    var viewWidth = 17*i + 20;
+    var height = viewWidth * i + i*30;
+    console.log(viewWidth);
+    console.log(height);
+}
+
 
 
     //             {
