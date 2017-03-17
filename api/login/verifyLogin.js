@@ -3,7 +3,7 @@
 module.exports = function (req, res) {
 	// 判断参数是否合法
 	var result = {
-		code: 225,
+		code: 200,
 		data: {
 			token: "h3bjfd739939fff98329",
 			loginName: "13161319360",
