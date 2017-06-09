@@ -8,14 +8,14 @@ module.exports = function (req, res) {
 	var result = {
 		code: 200,
 		data:{
-			groupId: timestamp,
+			groupId: '1491032218308',
 			time: timestamp,
 			groupName: grouppName,
 			groupRemark: 'Lefe remark',
 			haveName: 1,
 			isSave: 0,
 			receiveMsg: 1,
-			creater: '527557',
+			creater: '28952',
 			groupMembers: [
 			{friendId : "12", receiveMsg:1, nickName:"武卓觉得附近的李开复的减肥的浪费房价大幅度放到", duty:"iOS开发工程师", iconUrl:"http://tupian.qqjay.com/tou2/2017/0103/5e7be46b38ec437011f1808b39112944.jpg"},
 		{friendId : "13", signName:'会飞的鸟', nickName:"田向阳", duty:"Android开发工程师", iconUrl:"http://img17.3lian.com/d/file/201702/13/8e7b045808139074a133548eff01bb08.jpg"},

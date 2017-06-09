@@ -10,15 +10,17 @@ app.use(bodyparser.urlencoded({
 }));
 
 var routeCB = function routeCallBack(req, res, next){
-
-    console.log(req.method + '/' + req.hostname + req.originalUrl);
-    console.log('body:' + JSON.stringify(req.body));
+ 
+    if (req.originalUrl != '/api/log/log'){
+       console.log(req.method + '/' + req.hostname + req.originalUrl);
+       console.log('body:' + JSON.stringify(req.body));
+    }
 
     // Get header
     // console.log(JSON.stringify(req.headers));
     // console.log(req.get('deviceid'));
 
-    next()
+    next();
 }
 
 var dealCB = function  dealCallBack(req, res){
